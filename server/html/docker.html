@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Полный список команд Docker</title>
+        <style>
+        /* Общие стили */
+        body {
+            background-color: black;
+            color: yellow;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: yellow;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            border-bottom: 2px solid yellow;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1em;
+        }
+
+        code {
+            background-color: yellow;
+            color: black;
+            padding: 2px 5px;
+            border-radius: 4px;
+        }
+
+        strong {
+            color: yellow;
+        }
+
+        /* Дополнительные стили для улучшения внешнего вида */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .command-example {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Полный список команд Docker</h1>
+    <p>Ниже приведен список всех основных команд Docker с кратким описанием их назначения и примерами использования, разделенных по уровням:</p>
+
+    <h2>🔰 Уровень: Начинающий</h2>
+    <ul>
+        <li>
+            <h3>docker run</h3>
+            <p><strong>Описание:</strong> Запускает контейнер на основе указанного образа.</p>
+            <p><strong>Пример:</strong> <code>docker run -d -p 80:80 nginx</code> — Запускает контейнер с сервером Nginx в фоновом режиме и маппирует порты 80.</p>
+        </li>
+        <li>
+            <h3>docker ps</h3>
+            <p><strong>Описание:</strong> Показывает список всех работающих контейнеров.</p>
+            <p><strong>Пример:</strong> <code>docker ps</code> — Выводит все работающие контейнеры, их ID, статус и порты.</p>
+        </li>
+        <li>
+            <h3>docker stop</h3>
+            <p><strong>Описание:</strong> Останавливает работающий контейнер.</p>
+            <p><strong>Пример:</strong> <code>docker stop container_id</code> — Останавливает контейнер с указанным ID.</p>
+        </li>
+        <li>
+            <h3>docker start</h3>
+            <p><strong>Описание:</strong> Запускает остановленный контейнер.</p>
+            <p><strong>Пример:</strong> <code>docker start container_id</code> — Запускает контейнер с указанным ID.</p>
+        </li>
+    </ul>
+
+    <h2>🧑‍💻 Уровень: Средний</h2>
+    <ul>
+        <li>
+            <h3>docker build</h3>
+            <p><strong>Описание:</strong> Создает Docker-образ из Dockerfile.</p>
+            <p><strong>Пример:</strong> <code>docker build -t my_image .</code> — Строит образ с тегом <code>my_image</code> из текущей директории.</p>
+        </li>
+        <li>
+            <h3>docker exec</h3>
+            <p><strong>Описание:</strong> Выполняет команду внутри работающего контейнера.</p>
+            <p><strong>Пример:</strong> <code>docker exec -it container_id bash</code> — Открывает интерактивный терминал <code>bash</code> внутри контейнера.</p>
+        </li>
+        <li>
+            <h3>docker logs</h3>
+            <p><strong>Описание:</strong> Показывает логи работы контейнера.</p>
+            <p><strong>Пример:</strong> <code>docker logs container_id</code> — Отображает логи контейнера с указанным ID.</p>
+        </li>
+        <li>
+            <h3>docker rm</h3>
+            <p><strong>Описание:</strong> Удаляет контейнер.</p>
+            <p><strong>Пример:</strong> <code>docker rm container_id</code> — Удаляет контейнер с указанным ID.</p>
+        </li>
+    </ul>
+
+    <h2>🧠 Уровень: Сеньор</h2>
+    <ul>
+        <li>
+            <h3>docker build</h3>
+            <p><strong>Описание:</strong> Создает Docker-образ из Dockerfile.</p>
+            <p><strong>Пример:</strong> <code>docker build -t my_image .</code> — Строит образ с тегом <code>my_image</code> из текущей директории.</p>
+        </li>
+        <li>
+            <h3>docker push</h3>
+            <p><strong>Описание:</strong> Загружает локальный Docker-образ в репозиторий (например, Docker Hub).</p>
+            <p><strong>Пример:</strong> <code>docker push my_image</code> — Загружает локальный образ <code>my_image</code> в репозиторий Docker Hub.</p>
+        </li>
+        <li>
+            <h3>docker-compose up</h3>
+            <p><strong>Описание:</strong> Запускает все сервисы, описанные в <code>docker-compose.yml</code>.</p>
+            <p><strong>Пример:</strong> <code>docker-compose up</code> — Запускает все сервисы в фоновом режиме.</p>
+        </li>
+        <li>
+            <h3>docker-compose down</h3>
+            <p><strong>Описание:</strong> Останавливает и удаляет все контейнеры, сети и тома, созданные с помощью Docker Compose.</p>
+            <p><strong>Пример:</strong> <code>docker-compose down</code> — Останавливает и удаляет все ресурсы, связанные с Docker Compose.</p>
+        </li>
+    </ul>
+
+    <h2>🔧 Дополнительные команды</h2>
+    <ul>
+        <li>
+            <h3>docker tag</h3>
+            <p><strong>Описание:</strong> Присваивает тег Docker-образу.</p>
+            <p><strong>Пример:</strong> <code>docker tag image_id my_image:latest</code> — Присваивает тег <code>my_image:latest</code> Docker-образу с ID <code>image_id</code>.</p>
+        </li>
+        <li>
+            <h3>docker volume ls</h3>
+            <p><strong>Описание:</strong> Показывает список всех Docker-томов.</p>
+            <p><strong>Пример:</strong> <code>docker volume ls</code> — Выводит все тома, которые использует Docker на хосте.</p>
+        </li>
+        <li>
+            <h3>docker volume create</h3>
+            <p><strong>Описание:</strong> Создает новый Docker-том.</p>
+            <p><strong>Пример:</strong> <code>docker volume create my_volume</code> — Создает том с именем <code>my_volume</code>.</p>
+        </li>
+    </ul>
+
+</body>
+</html>
